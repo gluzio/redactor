@@ -132,6 +132,24 @@ memory and handles all redaction logic. It exposes three endpoints:
 - `POST /restore` — swap tokens back
 - `GET /status` — health check
 
+## Phi-3 Mini (Deep Scan)
+The first time you enable Deep Scan, `run_phi.py` automatically downloads 
+Phi-3 Mini (approximately 2.4GB) from Hugging Face and caches it at 
+`~/.cache/huggingface/hub`. This requires an internet connection once. 
+After that it runs entirely offline.
+
+Apple Silicon only. Phi-3 runs via MLX, Apple's machine learning framework 
+optimised for M-series chips. If you are on an Intel Mac, the server starts 
+without Phi-3 (layers 1 and 2 still run) and the Deep Scan toggle is 
+disabled automatically.
+
+To pre-download the model before first use:
+```bash
+cd ~/redactor
+source .venv/bin/activate
+python -c "from mlx_lm import load; load('mlx-community/Phi-3-mini-4k-instruct-4bit')"
+```
+
 **Auto-start on login** (macOS):
 
 ```bash
@@ -162,6 +180,14 @@ Submission is pending. Install via BRAT or manually in the meantime.
 **Does it work on mobile?**
 No. The plugin requires the local Python server and is marked
 `isDesktopOnly: true`.
+
+**Does Deep Scan require an internet connection?**
+Only once, to download the Phi-3 Mini model (~2.4GB) on first use. 
+After that everything runs offline.
+
+**Does Deep Scan work on Intel Macs?**
+No. MLX is Apple Silicon only. The plugin still works fully on Intel — 
+regex and spaCy detection run normally, Deep Scan is just unavailable.
 
 ## Manual installation
 
