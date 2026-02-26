@@ -46,7 +46,7 @@ to the real values — all without your private data ever leaving your machine.
 ### 1. Clone and set up the server
 
 ```bash
-git clone https://github.com/gianluzio/redactor
+git clone https://github.com/gluzio/redactor
 cd redactor
 chmod +x run.sh
 ./run.sh          # creates venv, installs deps, downloads spaCy model, starts app
@@ -70,7 +70,7 @@ turns green when it detects the server is running.
 **Option A — BRAT (recommended while awaiting community listing):**
 
 1. Install the [BRAT plugin](https://github.com/TfTHacker/obsidian42-brat)
-2. In BRAT settings → Add Beta Plugin → enter `gianluzio/redactor`
+2. In BRAT settings → Add Beta Plugin → enter `gluzio/redactor`
 3. Enable Redactor in Community Plugins settings
 
 **Option B — Manual:**
@@ -173,7 +173,7 @@ No. The plugin requires the local Python server and is marked
 ## Contributing
 
 Issues and pull requests welcome at
-[https://github.com/gianluzio/redactor](https://github.com/gianluzio/redactor).
+[https://github.com/gluzio/redactor](https://github.com/gluzio/redactor).
 
 ## License
 
