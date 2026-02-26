@@ -1,0 +1,84 @@
+/* Redactor plugin — scoped styles
+ * All class names are prefixed with .redactor- to avoid conflicts
+ * with Obsidian's own UI. No global element selectors are used.
+ */
+
+/* ── Ribbon icon ─────────────────────────────────────────────────────────── */
+.redactor-ribbon {
+  transition: color 0.3s ease;
+}
+
+/* ── Status bar item ─────────────────────────────────────────────────────── */
+.redactor-status-bar {
+  cursor: pointer;
+  font-size: var(--font-smallest);
+  opacity: 0.8;
+  transition: opacity 0.15s;
+}
+
+.redactor-status-bar:hover {
+  opacity: 1;
+}
+
+.redactor-status-bar--online {
+  color: var(--color-green);
+}
+
+.redactor-status-bar--offline {
+  color: var(--color-red);
+}
+
+/* ── Settings tab ────────────────────────────────────────────────────────── */
+.redactor-settings__description {
+  color: var(--text-muted);
+  font-size: var(--font-small);
+  margin-bottom: 16px;
+}
+
+.redactor-settings__status-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 8px 0 16px;
+  padding: 8px 12px;
+  background: var(--background-secondary);
+  border-radius: var(--radius-m);
+  font-size: var(--font-small);
+  color: var(--text-muted);
+}
+
+.redactor-settings__disclosure {
+  padding: 12px 14px;
+  background: var(--background-secondary);
+  border-radius: var(--radius-m);
+  border-left: 3px solid var(--color-accent);
+}
+
+.redactor-settings__disclosure p {
+  font-size: var(--font-small);
+  color: var(--text-muted);
+  margin: 0 0 8px;
+}
+
+.redactor-settings__disclosure p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Status dots ─────────────────────────────────────────────────────────── */
+.redactor-dot-online,
+.redactor-dot-offline {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.redactor-dot-online {
+  background-color: var(--color-green);
+  box-shadow: 0 0 4px var(--color-green);
+}
+
+.redactor-dot-offline {
+  background-color: var(--color-red);
+}

@@ -1,0 +1,10 @@
+{
+  "id": "redactor-plugin",
+  "name": "Redactor",
+  "version": "1.0.0",
+  "minAppVersion": "1.4.0",
+  "description": "Redact sensitive PII from notes before sending to an LLM, then restore the original locally. All processing stays on your device.",
+  "author": "Gian Luzio",
+  "authorUrl": "https://github.com/gianluzio",
+  "isDesktopOnly": true
+}
