@@ -1,0 +1,5 @@
+spacy>=3.7.0
+# tkinterdnd2 enables drag-and-drop; optional but recommended on macOS
+tkinterdnd2>=0.3.0
+# mlx-lm is used by run_phi.py (the separate model server), not app.py directly
+mlx-lm>=0.15.0

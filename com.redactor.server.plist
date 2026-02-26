@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+
+  <key>Label</key>
+  <string>com.redactor.server</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>__HOME__/redactor/.venv/bin/python</string>
+    <string>__HOME__/redactor/run_phi.py</string>
+  </array>
+
+  <!-- Working directory (run_phi.py uses relative imports) -->
+  <key>WorkingDirectory</key>
+  <string>__HOME__/redactor</string>
+
+  <!-- Inherit a sane PATH so spaCy data can be found -->
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>__HOME__/redactor/.venv/bin:/usr/local/bin:/usr/bin:/bin</string>
+    <key>HOME</key>
+    <string>__HOME__</string>
+  </dict>
+
+  <!-- Start at login -->
+  <key>RunAtLoad</key>
+  <true/>
+
+  <!-- Restart if it crashes, but throttle rapid restarts -->
+  <key>KeepAlive</key>
+  <true/>
+
+  <key>ThrottleInterval</key>
+  <integer>30</integer>
+
+  <!-- Log files -->
+  <key>StandardOutPath</key>
+  <string>__HOME__/Library/Logs/redactor/server.log</string>
+
+  <key>StandardErrorPath</key>
+  <string>__HOME__/Library/Logs/redactor/server.error.log</string>
+
+</dict>
+</plist>
